@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+		<link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+		<link rel="stylesheet" type="text/css" href="js/themes/color.css" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+	</head>
+
+	<body>
+		<div id="cc" class="easyui-calendar"></div>
+		<div class="container">
+			<div class="col-sm-6">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="workCode" class="col-sm-2 control-label">工号</label>
+						<div class="col-sm-4">
+							<input type="text" name="workCode" class="form-control easyui-textbox" value="YCKJ0224" />
+						</div>
+						<label for="name" class="col-sm-2 control-label">姓名</label>
+						<div class="col-sm-4">
+							<input type="text" name="name" class="form-control easyui-textbox" value="李强" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="gender" class="col-sm-2 control-label">性别</label>
+						<div class="col-sm-4">
+							<input type="radio" name="gender" value="1">男</input>
+							<input type="radio" name="gender" value="0">女</input>
+
+						</div>
+						<label for="name" class="col-sm-2 control-label">人员类型</label>
+						<div class="col-sm-4">
+							<select name="userType" class="form-control easyui-combobox">
+								<option value="1">员工</option>
+								<option value="2">VIP</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="gender" class="col-sm-2 control-label">所在单位</label>
+						<div class="col-sm-4">
+							<input class="form-control easyui-combotree" data-options="url:'tree_data1.json',method:'get'" ">
+						</div>
+						<label for="name " class="col-sm-2 control-label ">出生日期</label>
+						<div class="col-sm-4 ">
+							<input class="form-control easyui-datebox " data-options="sharedCalendar: '#cc' ">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+<!--
+	作者：offline
+	时间：2017-06-18
+	描述：http://www.cnblogs.com/jaxu/p/3698404.html
+-->
+	<body>
+		<button id="btnSend">提交json</button>
+		<script type="text/javascript" src="../js/jquery.min.js"></script>
+		<script type="text/javascript">
+			$("#btnSend").click(function() {
+				$("#request-process-patent").html("正在提交数据，请勿关闭当前窗口...");
+				$.ajax({
+					type: "POST",
+					url: "request_body.php",
+					contentType: "application/json; charset=utf-8",
+					data: JSON.stringify(GetJsonData()),
+					dataType: "json",
+					success: function(message) {
+							alert("请求已提交！我们会尽快与您取得联系");
+					},
+					error: function(message) {
+						alert('error');
+						//$("#request-process-patent").html("提交数据失败！");
+					}
+				});
+			});
+
+			function GetJsonData() {
+				var json = {
+					"classid": 2,
+					"name": $("#tb_name").val(),
+					"zlclass": "测试类型1,测试类型2,测试类型3",
+					"pname": $("#tb_contact_people").val(),
+					"tel": $("#tb_contact_phone").val()
+				};
+				return json;
+			}
+		</script>
+	</body>
+
+</html>
